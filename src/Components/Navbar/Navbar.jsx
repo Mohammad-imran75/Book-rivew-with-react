@@ -1,11 +1,40 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-    const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/listed'>Listed Books</NavLink></li>
-        <li><NavLink to='/pages'>Pages to Read</NavLink></li>
+  const links = (
+    <>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-green-500 font-bold" : "text-black"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-green-500 font-bold" : "text-black"
+          }
+          to="/listed"
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-green-500 font-bold" : "text-black"
+          }
+          to="/pages"
+        >
+          Pages to Read
+        </NavLink>
+      </li>
     </>
+  );
   return (
     <div className="navbar bg-base-100 mt-10">
       <div className="navbar-start">
@@ -28,26 +57,20 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 w-52"
           >
-            
-            {
-                links
-            }
-            
+            {links}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl font-extrabold">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-         {
-            links
-         }
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn mr-6 bg-green-500 text-white font-semibold">Sign in</a>
+        <a className="btn mr-6 bg-green-500 text-white font-semibold">
+          Sign in
+        </a>
         <a className="btn bg-blue-400 text-white font-semibold">Sign Up</a>
       </div>
     </div>
