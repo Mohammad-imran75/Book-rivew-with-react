@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { saveBookApplication } from "../../utility/localStorage";
+
+
 
 const BookDetails = () => {
   const location = useLocation();
@@ -9,11 +11,10 @@ const BookDetails = () => {
   // console.log(location)
   const handleWishList =() =>{
     saveBookApplication(book.bookId);
-    toast('you alredy added wishlist');
   }
   const handleToast = () =>{
     saveBookApplication(book.bookId)
-    toast('You are already added');
+    // toast('You are already added');
   }
   return (
     <div className="lg:max-w-6xl mx-auto flex gap-6 rounded-xl p-6">
@@ -68,6 +69,7 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
+      
       <ToastContainer />
     </div>
   );

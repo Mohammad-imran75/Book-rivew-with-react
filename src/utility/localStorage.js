@@ -1,4 +1,4 @@
-import { json } from "react-router-dom";
+
 import { toast } from "react-toastify";
 
 const getBookAppliction = () =>{
@@ -22,4 +22,18 @@ const saveBookApplication = id => {
     }
 }
 
+const getWishList = () =>{
+    const storedWishist = localStorage.getItem('wishlist-id');
+    if(storedWishist){
+        return JSON.parse(storedWishist);
+    }else{
+        return [];
+    }
+}
+
+const saveWishList = id =>{
+    const storedWishLists = getWishList();
+    const isExists = storedWishLists.includes(id)
+
+}
 export {getBookAppliction,saveBookApplication}
