@@ -20,7 +20,7 @@ const Pages = () => {
   const books = useLoaderData();
   console.log(books);
   return (
-    <div>
+    <div className="font-WorkSans">
       <BarChart
         width={1170}
         height={500}

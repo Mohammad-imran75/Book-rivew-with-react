@@ -23,7 +23,7 @@ const ListedBooks = () => {
   }, []);
   //   console.log(appliedBooks);
   return (
-    <div>
+    <div className="font-WorkSans">
       <h2 className="text-[40px] font-bold text-center bg-[#1313130D] rounded-2xl py-6">
         Books
       </h2>

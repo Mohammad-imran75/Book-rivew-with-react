@@ -17,7 +17,7 @@ const BookDetails = () => {
     // toast('You are already added');
   }
   return (
-    <div className="lg:max-w-6xl mx-auto flex gap-6 rounded-xl p-6">
+    <div className="lg:max-w-6xl font-WorkSans mx-auto flex gap-6 rounded-xl p-6">
       <div className="w-1/2 flex justify-around items-center bg-[#1313130D] rounded-xl">
         <figure>
           <img src={book.image} alt="" />

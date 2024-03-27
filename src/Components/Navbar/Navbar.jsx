@@ -6,7 +6,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 font-bold" : "text-black"
+            isActive ? "text-green-500 font-bold border border-green-500" : "text-black"
           }
           to="/"
         >
@@ -16,7 +16,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 font-bold" : "text-black"
+            isActive ? "text-green-500 font-bold border border-green-500" : "text-black"
           }
           to="/listed"
         >
@@ -26,7 +26,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 font-bold" : "text-black"
+            isActive ? "text-green-500 font-bold border border-green-500" : "text-black"
           }
           to="/pages"
         >
@@ -36,7 +36,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 font-bold" : "text-black"
+            isActive ? "text-green-500 font-bold border border-green-500" : "text-black"
           }
           to="/about"
         >
@@ -46,7 +46,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-green-500 font-bold" : "text-black"
+            isActive ? "text-green-500 font-bold border border-green-500" : "text-black"
           }
           to="/contact"
         >
@@ -56,7 +56,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 mt-10">
+    <div className="navbar bg-base-100 mt-10 font-WorkSans">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
