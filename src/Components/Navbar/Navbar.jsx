@@ -33,6 +33,26 @@ const Navbar = () => {
           Pages to Read
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-green-500 font-bold" : "text-black"
+          }
+          to="/about"
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-green-500 font-bold" : "text-black"
+          }
+          to="/contact"
+        >
+          Contact
+        </NavLink>
+      </li>
     </>
   );
   return (
