@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import { FcRating } from "react-icons/fc";
 const Book = ({ book }) => {
   const { bookName, author, image, category, tags, rating ,bookId} = book;
   // console.log(book);
@@ -22,7 +22,7 @@ const Book = ({ book }) => {
         <hr />
         <div className="flex justify-between mt-3">
           <h1>{category}</h1>
-          <h1>{rating}</h1>
+          <h1 className="flex items-center gap-2"><FcRating></FcRating>{rating}</h1>
         </div>
       </div>
     </Link>
