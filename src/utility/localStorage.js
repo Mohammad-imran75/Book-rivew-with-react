@@ -33,7 +33,11 @@ const getWishList = () =>{
 
 const saveWishList = id =>{
     const storedWishLists = getWishList();
-    const isExists = storedWishLists.includes(id)
+    const isExists = storedWishLists.includes(id);
+    if(!isExists){
+        storedWishLists.push(id);
+        localStorage.setItem('wishlist-id',JSON.stringify(storedWishLists));
+    }return toast('This wishList is added');
 
 }
-export {getBookAppliction,saveBookApplication}
+export {getBookAppliction,saveBookApplication,getWishList,saveWishList}

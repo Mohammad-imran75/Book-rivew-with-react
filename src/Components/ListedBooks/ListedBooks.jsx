@@ -7,7 +7,7 @@ const ListedBooks = () => {
   const [appliedBooks, setAppliedBooks] = useState([]);
   const [wishList, setWishList] = useState([]);
   const books = useLoaderData();
-
+    console.log(wishList)
   const storedBooksId = getBookAppliction();
 
   let storedId = [];
@@ -18,6 +18,7 @@ const ListedBooks = () => {
       );
       storedId.push(booksApplied);
       setAppliedBooks(storedId);
+      setWishList(storedId)
     }
   }, []);
   //   console.log(appliedBooks);

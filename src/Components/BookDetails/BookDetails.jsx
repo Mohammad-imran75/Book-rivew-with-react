@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { saveBookApplication } from "../../utility/localStorage";
+import { saveBookApplication,saveWishList} from "../../utility/localStorage";
 
 
 
@@ -10,7 +10,7 @@ const BookDetails = () => {
   const { book } = location.state || {};
   // console.log(location)
   const handleWishList =() =>{
-    saveBookApplication(book.bookId);
+    saveWishList(book.bookId);
   }
   const handleToast = () =>{
     saveBookApplication(book.bookId)
