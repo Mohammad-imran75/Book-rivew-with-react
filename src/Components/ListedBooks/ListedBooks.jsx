@@ -133,7 +133,7 @@ const ListedBooks = () => {
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
         >
           <div>
-            {appliedBooks.length > 0 && appliedBooks[0] ? (
+            {wishList.length > 0 && appliedBooks[0] ? (
               appliedBooks[0].map((book) => (
                 <div key={book.id}>
                   {/* card */}

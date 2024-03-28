@@ -1,45 +1,36 @@
+import { useEffect, useState } from "react";
+import { getBookAppliction } from "../../utility/localStorage";
 import { useLoaderData } from "react-router-dom";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+// import ShapeChart from "../ShapeChart/ShapeChart";
 
-const getPath = (x, y, width, height) =>
-  `M${x},${y + height}
-     C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3} ${
-    x + width / 2
-  }, ${y}
-     C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
-    x + width
-  }, ${y + height}
-     Z`;
 
-const TriangleBar = (props) => {
-  const { fill, x, y, width, height } = props;
-
-  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-};
 const Pages = () => {
+  const [readPages ,setReadPages ] = useState([]);
   const books = useLoaderData();
-  console.log(books);
+  const loadReadPages = getBookAppliction();
+  let storeReadBooks = [];
+  useEffect(()=>{
+    if(books.length > 0){
+      const readListBooks = books.filter(book => loadReadPages.includes(book.bookId));
+      storeReadBooks.push(readListBooks)
+      setReadPages(storeReadBooks)
+    }
+    
+  },[])
+  console.log(readPages);
   return (
-    <div className="font-WorkSans
-    ">
-      <BarChart
-        width={1170}
-        height={500}
-        data={books}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="bookName" />
-        <YAxis />
-        <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} />
-      </BarChart>
-    </div>
-  );
+    <div className="font-WorkSans">
+    <BarChart width={1000} height={600} data={readPages[0]}>
+            <Bar dataKey="totalPages" fill="green" />
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="name" />
+            <YAxis />
+        </BarChart>
+  </div>
+);
 };
 
 export default Pages;
+
+
